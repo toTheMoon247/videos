@@ -2,7 +2,18 @@
 
 This is a test from my mac machine 
 
-## Available Scripts
+## Building the movie component
+
+1. Open movies.jsx under components folder
+2. Add the <Movies /> element to the app
+3. Import movies using the service
+4. Create the design for the Delete button
+5. Create the onclick delete event
+
+### After validating that all the plumbing is working we can move on
+
+3. Taking from bootsrap the structure and incorporate it into movies.jsx
+
 
 In the project directory, you can run:
 

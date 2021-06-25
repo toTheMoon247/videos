@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
 // input: Is the component liked?
@@ -6,14 +6,17 @@ import React, { Component } from 'react';
    notified onClick... and so the consumer of the component will be able to save this to the db */
 
 
-class Like extends Component {
-	state = {
+const Like = (props) => {
+	let classes = "fa fa-heart";
+	if (!props.liked)
+		classes += "-o";
+	return (
+		<i style={{ cursor: "pointer" }} 
+		   onClick={props.onClick} 
+		   className={classes} 
+		   aria-hidden="true"
+		></i> );
 
-	}
-
-	render() {
-		return( <i class="fa fa-heart-o" aria-hidden="true"></i> );
-	}
 }
 
 export default Like;

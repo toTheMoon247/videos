@@ -3,6 +3,10 @@ const movies = require('./routes/movies');
 const express = require('express');
 const app = express();
 
+const cors = require('cors');
+app.use(cors());
+
+
 // Connect to the database
 mongoose.connect('mongodb://localhost/videos') // TODO:: Extract it to a config file
 	.then(() => console.log('Connected to mongoDB...'))
@@ -11,5 +15,5 @@ mongoose.connect('mongodb://localhost/videos') // TODO:: Extract it to a config 
 app.use(express.json());
 app.use('/api/movies', movies);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 app.listen(port, () => console.log(`listening on port ${port}...`));

@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { getMovies } from '../services/fakeMovieService';
 import Like from './common/like';
 
 class Movies extends Component {
 	state = {
-		movies: getMovies()
+		movies: []
 	};
+
+	async componentDidMount() {
+		try {
+			const promise = axios.get('http://localhost:3001/api/movies');
+			const response = await promise;
+			const { data: movies } = response;
+
+			this.setState({ movies });
+		} catch (ex) {
+			console.log('something failed while trying ti get movies...');
+			console.log(ex);
+		}
+	}
 
 	handleDelete = movie => {
 		const movies = this.state.movies.filter(m => m._id !== movie._id);
@@ -34,9 +48,8 @@ class Movies extends Component {
 					<thead>
 						<tr>
 							<th>Title</th>	
-							<th>Genre</th>
-							<th>Stock</th>
-							<th>Rate</th>
+							<th>Rating</th>
+							<th>Liked</th>
 							<th></th>
 						</tr>
 					</thead>
@@ -45,9 +58,7 @@ class Movies extends Component {
 						{ this.state.movies.map(movie => (
 							<tr key={movie._id}>
 								<td>{movie.title}</td>
-								<td>{movie.genre.name}</td>
-								<td>{movie.numberInStock}</td>
-								<td>{movie.dailyRentalRate}</td>
+								<td>{movie.rating}</td>
 								<td><Like liked={movie.liked} onClick={() => this.handleLiked(movie)}/></td>
 								<td>
 									<button onClick={() => this.handleDelete(movie)} className="btn btn-danger btn-sm">Delete</button>

@@ -3,3 +3,7 @@
 3. Create index.js file
 4. On index.js file to define the port that we listen. 
 5. Define routes
+
+### Environment Variable
+
+env variable is set out of the app

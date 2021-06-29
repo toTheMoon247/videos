@@ -1,11 +1,8 @@
-const {Movie} = require('../models/movie');
-const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
+const MoviesController = require('../controllers/movies');
 
-router.get('/', async(req, res) => {
-	const movies = await Movie.find().sort('title');
-	res.send(movies);
-});
+
+router.get('/', MoviesController.get_all);
 
 module.exports = router;

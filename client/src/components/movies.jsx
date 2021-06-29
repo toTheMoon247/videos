@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { getMovies } from '../services/fakeMovieService';
 import Like from './common/like';
 
 class Movies extends Component {

@@ -15,7 +15,8 @@ class Movies extends Component {
 
 			this.setState({ movies });
 		} catch (ex) {
-			console.log('something failed while trying ti get movies...');
+			alert('Alert: something failed while trying to get movies...');
+			console.log('something failed while trying to get movies...');
 			console.log(ex);
 		}
 	}

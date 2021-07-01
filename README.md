@@ -37,3 +37,8 @@ I'm using mongoose to talk with MongoDB
 1. Adding a route: I added a route to MoviesController
 2. Creating a movie model: I've created a mongoose model to reflect the movie model on the app
 3. Building the MoviesController: I've build the MoviesController and added the CRUD actions needed
+
+### Client: Adding a routing 
+
+1. install react-router-dom@4.3.1
+2. wrap the <App /> component with <BrowserRouter />

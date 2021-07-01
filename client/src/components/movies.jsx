@@ -32,6 +32,7 @@ class Movies extends Component {
 		movies[index] = { ...movies[index] };
 
 		movies[index].liked =  !movies[index].liked;
+		// TODO: Update the backend
 		this.setState({ movies });
 	}
 

@@ -37,5 +37,3 @@ I'm using mongoose to talk with MongoDB
 1. Adding a route: I added a route to MoviesController
 2. Creating a movie model: I've created a mongoose model to reflect the movie model on the app
 3. Building the MoviesController: I've build the MoviesController and added the CRUD actions needed
-
-

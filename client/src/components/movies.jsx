@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import Like from './common/like';
 
 class Movies extends Component {
@@ -58,7 +59,7 @@ class Movies extends Component {
 					<tbody>
 						{ this.state.movies.map(movie => (
 							<tr key={movie._id}>
-								<td>{movie.title}</td>
+								<td><Link to={`/movies/${movie._id}`}>{movie.title}</Link></td>
 								<td>{movie.rating}</td>
 								<td><Like liked={movie.liked} onClick={() => this.handleLiked(movie)}/></td>
 								<td>

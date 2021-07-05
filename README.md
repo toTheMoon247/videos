@@ -42,3 +42,9 @@ I'm using mongoose to talk with MongoDB
 
 1. install react-router-dom@4.3.1
 2. wrap the <App /> component with <BrowserRouter />
+
+
+### client: Create an "Add a Movie" form
+
+1. Create a form using a Bootstrap template.
+2. Add a submit handler for the form onSubmit action. 

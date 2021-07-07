@@ -48,3 +48,6 @@ I'm using mongoose to talk with MongoDB
 
 1. Create a form using a Bootstrap template.
 2. Add a submit handler for the form onSubmit action. 
+
+```see lesson forms.4```
+In react we are not accessing the DOM elements / document elemnt directly. React goal is to give a layer of abstraction around the DOM/document element. The purpose of the abstraction is to allow easier maintanance and easier ability to create unit tests.

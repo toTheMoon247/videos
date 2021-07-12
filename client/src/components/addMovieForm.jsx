@@ -1,6 +1,9 @@
 import { React, Component } from 'react';
 
 class AddMovieForm extends Component {
+	username = React.createRef();
+
+
 	// e for event. 
 	handleSubmit = e =>{
 		// prevent submitting the form to the server. we want to prevent a full page reload
@@ -18,7 +21,7 @@ class AddMovieForm extends Component {
 				<form onSubmit={this.handleSubmit}>
 					<div className="form-group">
 						<label htmlFor="moviename">Title</label>
-						<input id="moviename" type="text" className="form-control"/>
+						<input ref={this.username} id="moviename" type="text" className="form-control"/>
 					</div>
 					<div className="form-group">
 						<label htmlFor="rating">Rating</label>

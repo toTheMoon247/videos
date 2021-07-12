@@ -1,7 +1,9 @@
 import { React, Component } from 'react';
 
 class AddMovieForm extends Component {
-	username = React.createRef();
+	state = {
+		movie: { title: '', rating: ''}
+	};
 
 
 	// e for event. 
@@ -14,6 +16,12 @@ class AddMovieForm extends Component {
 		// redirect the user to another page
 	};
 
+	handleChange = e => {
+		const movie = {...this.state.movie};
+		movie[e.currentTarget.name] = e.currentTarget.value;
+		this.setState({ movie });
+	};
+
 	render() {
 		return(
 			<div>
@@ -21,11 +29,23 @@ class AddMovieForm extends Component {
 				<form onSubmit={this.handleSubmit}>
 					<div className="form-group">
 						<label htmlFor="moviename">Title</label>
-						<input ref={this.username} id="moviename" type="text" className="form-control"/>
+						<input 
+							value={this.state.movie.name} 
+							onChange={this.handleChange} 
+							name="title"
+							id="moviename" 
+							type="text" 
+							className="form-control"/>
 					</div>
 					<div className="form-group">
 						<label htmlFor="rating">Rating</label>
-						<input id="rating" type="text" className="form-control"/>
+						<input 
+							value={this.state.movie.rating} 
+							onChange={this.handleChange} 
+							name="rating"
+							id="rating" 
+							type="text" 
+							className="form-control"/>
 					</div>
 					<button className="btn-primary">Add</button>
 				</form>
